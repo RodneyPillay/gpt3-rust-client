@@ -1,3 +1,4 @@
+[![Rust](https://github.com/RodneyPillay/gpt3-withrust/actions/workflows/rust.yml/badge.svg)](https://github.com/RodneyPillay/gpt3-withrust/actions/workflows/rust.yml)
 # Simple Rust Client for OpenAI
 Inspired by https://www.youtube.com/watch?v=5WhJQMnJjik
 
