@@ -1,11 +1,15 @@
 #![allow(non_snake_case)]
 
+#[macro_use]
+extern crate clap;
+
 use hyper::body::Buf;
 use hyper::{header, Body, Client, Request};
 use hyper_tls::HttpsConnector;
 use serde_derive::{Deserialize, Serialize};
 use std::env;
 use std::io::{stdin, stdout, Write};
+use clap::App;
 
 #[derive(Deserialize, Debug, Clone)]
 struct OpenAIChoices {
@@ -27,8 +31,14 @@ struct OpenAIRequest {
     presence_penalty: u32,
 }
 
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
+    
+    let yaml = load_yaml!("cli.yml");
+    let matches = App::from_yaml(yaml).get_matches();
+    let input_temperature = matches.value_of("temperature").unwrap_or("0.7");
+    let input_max_tokens = matches.value_of("temperature").unwrap_or("100");
     
     let https = HttpsConnector::new();
     let client = Client::builder().build(https);
@@ -53,13 +63,14 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
         println!("...Thinking");
         let oai_request = OpenAIRequest {
             prompt: format!("{}", user_text),
-            temperature: 0.7,
-            max_tokens: 100, 
+            temperature: input_temperature.parse().unwrap(),
+            max_tokens: input_max_tokens.parse().unwrap(), 
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,
         };
-                
+        
+
         let body =  Body::from(serde_json::to_vec(&oai_request)?);
         let req = Request::post(uri)
         .header(header::CONTENT_TYPE, "application/json")

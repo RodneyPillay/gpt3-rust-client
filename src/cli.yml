@@ -1,0 +1,10 @@
+name: GPT3-Rust-Client
+version: "X"
+author: Rodney Pillay
+about: CLI to learn Rust. Simple usage of Clap.
+usage: RustOpenAI.exe 0.7 100
+args:
+    - temperature:
+        help: A value from 0 to 1 that controls how confident the model should be with predictions
+    - max_tokens:
+        help: Control the response lenght. This also affects the cost of the call.
