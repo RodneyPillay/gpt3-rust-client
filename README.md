@@ -3,6 +3,8 @@
 <a href="#"><img src="https://img.shields.io/github/issues/RodneyPillay/gpt3-rust-client"></img></a> 
 <a href="#"><img src="https://img.shields.io/github/forks/RodneyPillay/gpt3-rust-client"></img></a> 
 <a href="#"><img src="https://img.shields.io/github/stars/RodneyPillay/gpt3-rust-client"></img></a>
+<a href="#"><img src="https://img.shields.io/github/repo-size/RodneyPillay/gpt3-rust-client"></img></a>
+  <a href="https://github.com/RodneyPillay/gpt3-rust-client/graphs/contributors"><img src="https://img.shields.io/github/contributors/RodneyPillay/gpt3-rust-client?color=blue"></img></a>
 
 
 # Simple Rust Client for OpenAI
