@@ -38,7 +38,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
     let input_temperature = matches.value_of("temperature").unwrap_or("0.7");
-    let input_max_tokens = matches.value_of("temperature").unwrap_or("100");
+    let input_max_tokens = matches.value_of("max_tokens").unwrap_or("100");
     
     let https = HttpsConnector::new();
     let client = Client::builder().build(https);
@@ -63,8 +63,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
         println!("...Thinking");
         let oai_request = OpenAIRequest {
             prompt: format!("{}", user_text),
-            temperature: input_temperature.parse().unwrap(),
-            max_tokens: input_max_tokens.parse().unwrap(), 
+            temperature: input_temperature.parse().unwrap(), //string to f32
+            max_tokens: input_max_tokens.parse().unwrap(),  //string to u32
             top_p: 1,
             frequency_penalty: 0,
             presence_penalty: 0,

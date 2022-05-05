@@ -1,4 +1,10 @@
-[![Build](https://github.com/RodneyPillay/gpt3-withrust/actions/workflows/rust.yml/badge.svg)](https://github.com/RodneyPillay/gpt3-withrust/actions/workflows/rust.yml)
+[![Build](https://github.com/RodneyPillay/gpt3-rust-client/actions/workflows/rust.yml/badge.svg)](https://github.com/RodneyPillay/gpt3-rust-client/actions/workflows/rust.yml)
+<a href="http://opensource.org/licenses/MIT"><img src="https://img.shields.io/github/license/RodneyPillay/gpt3-rust-client?color=black"></img></a>
+<a href="#"><img src="https://img.shields.io/github/issues/RodneyPillay/gpt3-rust-client"></img></a> 
+<a href="#"><img src="https://img.shields.io/github/forks/RodneyPillay/gpt3-rust-client"></img></a> 
+<a href="#"><img src="https://img.shields.io/github/stars/RodneyPillay/gpt3-rust-client"></img></a>
+
+
 # Simple Rust Client for OpenAI
 Inspired by https://www.youtube.com/watch?v=5WhJQMnJjik
 
@@ -16,6 +22,12 @@ Inspired by https://www.youtube.com/watch?v=5WhJQMnJjik
 * [Mutable Variables](https://doc.rust-lang.org/std/keyword.mut.html)
 * [Pointer Types](https://doc.rust-lang.org/reference/types/pointer.html)
 * [OpenAI Tokens](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-to-count-them)
+
+## Crates Used
+* hyper-tls
+* tokio
+* serde
+* clap
 
 ## Code Execution
 browse to the code folder using a terminal  
