@@ -34,7 +34,7 @@ struct OpenAIRequest {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
-    
+        
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
     let input_temperature = matches.value_of("temperature").unwrap_or("0.7");
@@ -60,7 +60,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error + Send + Sync>>  {
            break;
         }
 
-        println!("...Thinking");
+        //TODO: https://stackoverflow.com/questions/59890270/how-do-i-overwrite-console-output
+        println!("Thinking...");
         let oai_request = OpenAIRequest {
             prompt: format!("{}", user_text),
             temperature: input_temperature.parse().unwrap(), //string to f32
