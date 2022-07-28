@@ -16,6 +16,9 @@ Inspired by https://www.youtube.com/watch?v=5WhJQMnJjik
     * [Install Plugin rust-analyser](https://marketplace.visualstudio.com/items?itemName=matklad.rust-analyzer) for rust integration.
     * [Install Plugin CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb) for rust debugging.
 
+## General Articles
+* [How not to learn Rust](https://dystroy.org/blog/how-not-to-learn-rust/)
+
 ## Concepts Encountered In The Client
 * [Derive](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
 * [Boxed](https://doc.rust-lang.org/std/boxed/index.html)
